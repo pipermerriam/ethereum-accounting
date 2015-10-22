@@ -45,14 +45,15 @@ an exception is thrown.
 
 ### Events
 
-The following events are available.  Each event has a corresponding library
-function that can be used to log the event.
+The following events are available.
 
 
 * `event _Deposit(address indexed _from, address indexed accountAddress, uint value)`
 * `event _Withdrawal(address indexed accountAddress, uint value)`
 * `event _InsufficientFunds(address indexed accountAddress, uint value, uint balance)`
 
+
+Each event has a corresponding library function that can be used to log the event.
 
 * `function Deposit(address _from, address accountAddress, uint value) public`
 * `function Withdrawal(address accountAddress, uint value) public`
