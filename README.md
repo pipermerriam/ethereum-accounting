@@ -9,6 +9,15 @@ Solididy Library for dealing with ethereum account balances within a contract.
 The primary unit of storage in accounting is the `Bank` struct which contains a
 single mapping from addresses to account balances at `Bank.accountBalances`.
 
+### Sending Funds
+
+You can use the `sendRobust` function to send funds in a manner that will work
+for either normal addresses or contract addresses that implement a fallback
+function.
+
+`sendRobust(address toAddress, uint value) public returns (bool)`
+
+
 ### Deposits and Withdrawls
 
 The following functions are *high* level account management functions that are
