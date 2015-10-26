@@ -57,4 +57,23 @@ contract TestAccounting {
         function setAccountBalance(address accountAddress, uint value) public {
                 bank.accountBalances[accountAddress] = value;
         }
+
+        function sendRobust(address toAddress, uint value) public {
+                AccountingLib.sendRobust(toAddress, value);
+        }
+}
+
+
+contract Other {
+    function Other() {
+    }
+}
+
+
+contract OtherWithFallback {
+    bool flag;
+
+    function() {
+        flag = true;
+    }
 }

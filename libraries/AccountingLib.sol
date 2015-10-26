@@ -109,4 +109,18 @@ library AccountingLib {
                 }
                 return false;
         }
+
+        function sendRobust(address toAddress, uint value) public returns (bool) {
+                if (!toAddress.send(value)) {
+                        // Potentially sending money to a contract that
+                        // has a fallback function.  So instead, try
+                        // tranferring the funds with the call api.
+                        if (!toAddress.call.value(value)()) {
+                                // Revert the entire transaction.  No
+                                // need to destroy the funds.
+                                return false;
+                        }
+                }
+                return true;
+        }
 }
