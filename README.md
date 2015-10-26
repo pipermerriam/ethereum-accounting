@@ -1,6 +1,6 @@
-# Ethereum Account Lib
+# Ethereum Accounting Lib
 
-Solididy Library for dealing with ethereum account balances within a contract.
+Solididy Library for dealing with basic accounting tools.
 
 ## API
 
